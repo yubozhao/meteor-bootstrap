@@ -98,7 +98,8 @@ var handler = function (compileStep, isLiterate) {
     "// These are the mixins bootstrap provides",
     "// They are included here so you can use them in your less files too,",
     "// However: you should @import \"" + path.basename(importLessFile) + "\" instead of this",
-    getLessContent('bootstrap/less/mixins.less')
+    getLessContent('bootstrap/less/mixins.less'),
+    getLessContent('bootstrap-material-design/less/_mixins.less')
   ]);
    
   // create the file that can be modified
@@ -110,7 +111,8 @@ var handler = function (compileStep, isLiterate) {
       "// mixins and variables that bootstrap provides.",
       '',
       '@import "' + path.basename(mixinsLessFile) + '";',
-      getLessContent('bootstrap/less/variables.less')
+      getLessContent('bootstrap/less/variables.less'),
+      getLessContent('bootstrap-material-design/less/_variables.less')
     ]);
   }
   
@@ -124,7 +126,8 @@ var handler = function (compileStep, isLiterate) {
     "// To fix that remove that file and then recover your changes.",
     '',
     '@import "' + path.basename(importLessFile) + '";',
-    '@icon-font-path: "/packages/nemo64_bootstrap-data/bootstrap/fonts/";'
+    '@icon-font-path: "/packages/bozhao_bootstrap-material-design-data/bootstrap/fonts/";',
+    '@icon-font-path: "/packages/bozhao_bootstrap-material-design-data/bootstrap-material-design/fonts/";'
   ];
   _.each(less, function (lessPath) {
     bootstrapContent.push(getLessContent('' + lessPath));
