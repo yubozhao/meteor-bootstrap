@@ -1,7 +1,7 @@
 Package.describe({
-  name: "bozhao:bootstrap-material-design",
-  summary: "Highly configurable bootstrap and material design integration.",
-  version: "3.3.1_6",
+  name: "bozhao:bootstrap",
+  summary: "Highly configurable bootstrap integration. FORKED from nemo64:bootstrap",
+  version: "3.3.1",
   git: "https://github.com/yubozhao/meteor-bootstrap"
 });
 

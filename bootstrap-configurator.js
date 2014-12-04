@@ -91,7 +91,8 @@ var handler = function (compileStep, isLiterate) {
   // filenames
   var mixinsLessFile = jsonPath.replace(/json$/i, 'mixins.import.less')
   var importLessFile = jsonPath.replace(/json$/i, 'import.less');
-  var outputLessFile = jsonPath.replace(/json$/i, 'less');
+  //var outputLessFile = jsonPath.replace(/json$/i, 'less');
+  var outputLessFile = jsonPath.replace(/json$/i, 'base.import.less');
 
   createLessFile(mixinsLessFile, [
     "// THIS FILE IS GENERATED, DO NOT MODIFY IT!",
@@ -99,7 +100,6 @@ var handler = function (compileStep, isLiterate) {
     "// They are included here so you can use them in your less files too,",
     "// However: you should @import \"" + path.basename(importLessFile) + "\" instead of this",
     getLessContent('bootstrap/less/mixins.less'),
-    getLessContent('bootstrap-material-design/less/_mixins.less')
   ]);
    
   // create the file that can be modified
@@ -112,7 +112,6 @@ var handler = function (compileStep, isLiterate) {
       '',
       '@import "' + path.basename(mixinsLessFile) + '";',
       getLessContent('bootstrap/less/variables.less'),
-      getLessContent('bootstrap-material-design/less/_variables.less')
     ]);
   }
   
@@ -127,7 +126,6 @@ var handler = function (compileStep, isLiterate) {
     '',
     '@import "' + path.basename(importLessFile) + '";',
     '@icon-font-path: "/packages/bozhao_bootstrap-material-design-data/bootstrap/fonts/";',
-    '@icon-font-path: "/packages/bozhao_bootstrap-material-design-data/bootstrap-material-design/fonts/";'
   ];
   _.each(less, function (lessPath) {
     bootstrapContent.push(getLessContent('' + lessPath));
