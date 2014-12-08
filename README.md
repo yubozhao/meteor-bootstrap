@@ -5,13 +5,12 @@ This package integrates bootstrap into meteor and lets you configure what parts 
 
 How to install
 --------------
-
-
-
-1. execute `meteor add nemo64:bootstrap less`
+1. execute `meteor add bozhao:bootstrap less`
 2. create an empty `custom.bootstrap.json` file somewhere in your project. (`/client/lib/custom.bootstrap.json` for example)
 3. start meteor and then edit the file you just created (see [custom.bootstrap.json](#custom.bootstrap.json)).
-4. (optional) edit `custom.bootstrap.import.less` which now appeared next to the json file
+4. (optional) edit `custom.bootstrap.base.import.less` which now appeared next to the json file
+5. (optional)  For Material design package, add bozhao:bootstrap-material  and
+   follow similar setups
 
 custom.bootstrap.json
 ---------------------
